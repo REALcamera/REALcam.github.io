@@ -1,5 +1,144 @@
+:root {
+    --logo-corner-offset: 138.28571350%;
+    --logo-corner-open-offset: 500%;
+}
+
 * {
     font-family: "Nunito";
     padding: 0;
     margin: 0;
+}
+
+body {
+    box-sizing: border-box;
+    min-height: 1000vh;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background-color: #000;
+    overflow: hidden;
+    transition: 0.5s ease-in-out;
+}
+
+header.top {
+    height: 100px;
+}
+
+header .logo {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    left: 50%;
+    transition: 0.5s ease-in-out;
+}
+
+header.top .logo {
+    width: 17px;
+    height: 17px;
+    left: 50px;
+}
+
+.logo svg {
+    position: absolute;
+    fill: #fff;
+}
+
+.logo .border {
+    transform: scale(179.82474281%);
+    animation: borderzoom forwards 1.3s ease-out;
+}
+
+.logo .diamond {
+    transform: scale(183.58190323%);
+    animation: diamondzoom forwards 2s ease-in-out;
+}
+
+.logo .corners .corner {
+    transform: scale(36.119142604%);
+}
+
+.logo .corners .corner:nth-child(1) {
+    transform: translate(calc(-1 * var(--logo-corner-offset)), calc(-1 * var(--logo-corner-offset))) rotate(0deg);
+    animation: corner1zoom forwards 1.5s ease-out;
+}
+
+.logo .corners .corner:nth-child(2) {
+    transform: translate(var(--logo-corner-offset), calc(-1 * var(--logo-corner-offset))) rotate(90deg);
+    animation: corner2zoom forwards 1.5s ease-out;
+}
+
+.logo .corners .corner:nth-child(3) {
+    transform: translate(var(--logo-corner-offset), var(--logo-corner-offset)) rotate(180deg);
+    animation: corner3zoom forwards 1.5s ease-out;
+}
+
+.logo .corners .corner:nth-child(4) {
+    transform: translate(calc(-1 * var(--logo-corner-offset)), var(--logo-corner-offset)) rotate(270deg);
+    animation: corner4zoom forwards 1.5s ease-out;
+}
+
+@keyframes borderzoom {
+    from,
+    0% {
+        transform: scale(400%) rotate(-10deg);
+    }
+    100% {
+        transform: scale(179.82474281%);
+    }
+}
+
+@keyframes diamondzoom {
+    from,
+    20% {
+        transform: scale(0%) rotate(135deg);
+    }
+    100% {
+        transform: scale(183.58190323%) rotate(0deg);
+    }
+}
+
+@keyframes corner1zoom {
+    from,
+    0% {
+        transform: translate(calc(-1 * var(--logo-corner-open-offset)), calc(-1 * var(--logo-corner-open-offset)));
+    }
+    100% {
+        transform: translate(calc(-1 * var(--logo-corner-offset)), calc(-1 * var(--logo-corner-offset)));
+    }
+}
+
+@keyframes corner2zoom {
+    from,
+    0% {
+        transform: translate(var(--logo-corner-open-offset), calc(-1 * var(--logo-corner-open-offset))) rotate(90deg);
+    }
+    100% {
+        transform: translate(var(--logo-corner-offset), calc(-1 * var(--logo-corner-offset))) rotate(90deg);
+    }
+}
+
+@keyframes corner3zoom {
+    from,
+    0% {
+        transform: translate(var(--logo-corner-open-offset), var(--logo-corner-open-offset)) rotate(180deg);
+    }
+    100% {
+        transform: translate(var(--logo-corner-offset), var(--logo-corner-offset)) rotate(180deg);
+    }
+}
+
+@keyframes corner4zoom {
+    from,
+    0% {
+        transform: translate(calc(-1 * var(--logo-corner-open-offset)), var(--logo-corner-open-offset)) rotate(270deg);
+    }
+    100% {
+        transform: translate(calc(-1 * var(--logo-corner-offset)), var(--logo-corner-offset)) rotate(270deg);
+    }
 }
